@@ -9,7 +9,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-		VIEW = os.path.join(os.getcwd(), 'backend', 'views')
+    VIEW = os.path.join(os.getcwd(), 'backend', 'views')
 
 		# url = 'python.gif'
 
@@ -17,9 +17,9 @@ class MainPage(webapp2.RequestHandler):
 		# 	'url': url
 		# }
 
-		template = JINJA_ENVIRONMENT.get_template('index.html')
+    template = JINJA_ENVIRONMENT.get_template('index.html')
 		# self.response.write(template.render(template_values))
-		self.response.write(template.render())
+    self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([

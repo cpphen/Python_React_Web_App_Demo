@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux';
 import * as timeAction from 'actions/time';
 import Time from 'components/Time';
 
-const NEXT_NEW_YEAR = '1/1/2020';
+const NEXT_NEW_YEAR = '1/1/2024';
 
 class Clock extends Component {
 	state = {
-		currentTime: null
+		currentTime: null,
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
 		setTimeout(() => {
 			this.setState({ 
 				currentTime: Date.parse(NEXT_NEW_YEAR) - Date.parse(new Date()) 

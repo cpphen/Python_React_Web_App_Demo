@@ -21,7 +21,7 @@ module.exports = {
       components: path.resolve(path.join(process.cwd(), "components")),
       containers: path.resolve(path.join(process.cwd(), "containers")),
       actions: path.resolve(path.join(process.cwd(), "actions")),
-      reducers: path.resolve(path.join(process.cwd(), "reducers"))
+      reducers: path.resolve(path.join(process.cwd(), "reducers")) // CONSOLE LOG THISSSSS
     }, 
     extensions: [".js"] 
   },

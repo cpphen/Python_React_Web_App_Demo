@@ -1,0 +1,230 @@
+#loader {
+	border-radius: 50%;
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -200px;
+}
+
+.clock {
+	span {
+		display: block;
+	}
+	h1 {
+		color: gold;
+	}
+  position: absolute;
+  height: auto;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  margin-left: -40%;
+  margin-top: -86px;
+  text-align: center;
+  font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+	
+	.label {
+		color: #FFF;
+		margin-top: 10px;
+		font-size: 25px;
+	}
+	.numBox {
+		width: 20%;
+    height: 120px;
+		display: inline-block;
+		padding: 2% 2% 0;
+		#backTop, #backBot {
+			h1 {
+				height: 200%;
+				font-size: 67px;
+				margin: 0;
+				font-size: 134px;
+			}
+			h1 {
+				&.backNum {
+					position: absolute;
+					color: gold;
+					font-weight: 300;
+				}
+			}
+			background: #333;
+			width: 100%;
+			height: 50%;
+			
+			float: left;
+			position: relative;
+			overflow: hidden !important;
+		}
+		#backTop {
+			h1 {
+				&.backNum {
+					top: -23px;
+					left: 0;
+					right: 0;
+				}
+			}
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+		}
+		#backBot {
+			h1 {
+				&.backNum {
+					top: -83px;
+					bottom: 0;
+					left: 0;
+					right: 0;
+				}
+				transition: opacity 500ms linear;
+				&.show {
+					opacity: 1;
+				}
+				&.hide {
+					opacity: 0;
+				}
+			}
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+		
+		.num {
+			width: 100%;
+			height: 100%;
+			background: #333;
+			perspective: 200px;
+			position: relative;
+			background: transparent;
+			z-index: 2;
+			overflow: visible !important;
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+			.divider {
+				height: 3px;
+				width: 100%;
+				position: fixed;
+				top: 50%;
+				margin-top: -1.5px;
+				z-index: 10;
+				background: #201E1E;
+			}
+			.top-container {
+				top: 0;
+				left: 0;
+				right: 0;
+				&.flip {
+					height: 100%;
+		    	top: 0;
+		    	right: 0;
+		    	bottom: 0;
+		    	left: 0;
+		    	z-index: 1;
+					animation: flipper 0.500s linear both;
+					@keyframes flipper {
+						0% {
+							transform: rotateX(0deg);
+							text-shadow: 0 0 0 #000000;
+						}
+						100% {
+							transform: rotateX(-90deg);
+							text-shadow: 12px 14px 7px #000000;
+						}
+					}
+				}
+				.overlayTop {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: 5;
+					background: linear-gradient(to bottom, transparent 50%, rgba(51, 51, 51, 0.4) 60%, rgba(51, 51, 51, 0.7) 70%, rgba(51, 51, 51, 0.9) 100%);
+					
+				}
+			}
+			.bottom-container {
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+		    &.flip {
+		    	.bottom {
+		    		h1 {
+			    		top: -23px;
+		    		}
+		    	}
+		    	height: 100%;
+		    	top: 0;
+		    	right: 0;
+		    	bottom: 0;
+		    	left: 0;
+		    	z-index: 1;
+					animation: flipperBottom 0.500s linear both;
+					@keyframes flipperBottom {
+						0% {
+							transform: rotateX(90deg);
+							text-shadow: 12px 14px 7px rgba(0, 0, 0, 0.5);
+						}
+						100% {
+							transform: rotateX(0deg);
+							text-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+						}
+					}
+		    }
+			}
+			.top-container, .bottom-container {
+				h1 {
+					font-weight: 300;
+				}
+				transition: none;
+				color: gold;
+				font-size: 67px;
+				font-weight: bold;
+				text-align: center;
+				position: absolute;
+				// position: relative;
+				background: #333;
+				height: 50%;
+				overflow: hidden;
+				z-index: 2;
+				.top, .bottom {
+					background: #333;
+					// color: #CCC;
+					position: relative;
+					transform-style: preserve-3d;
+				}
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				.top {
+					h1 {
+				    margin: -23px 0 0;
+					}
+				}
+				.bottom {
+					h1 {
+						height: 100%;
+						position: absolute;
+						top: -83px;
+						margin-top: 0;
+						width: 100%;
+						height: 100%;
+					}
+					// h1:first-child {
+					// 	z-index: 2;
+					// }
+			    margin-top: 0;
+				}
+			}
+		}
+
+
+	}
+	div:last-child {
+		border-right: none;
+	}
+}

@@ -1,0 +1,56 @@
+#home {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #201E1E;
+	text-align: center;
+	overflow: auto;
+	.main-header {
+		color: #CCFF00;
+		font-size: 45px;
+		text-align: center;
+		border: solid 4px #FF6EFF;
+		border-radius: 50%;
+		width: 20%;
+		margin: 20px auto 0;
+		font-weight: 400;
+		padding: 40px;
+		font-family: Brush Script MT, Brush Script Std, cursive;
+		// text-shadow: 0 0 0 #CCFF00;
+		animation: pulse 2s ease-out infinite both;
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 5px #ff6eff;
+				text-shadow: 0 0 10px #CCFF00;
+			}
+			50% {
+				box-shadow: 0 0 20px #ff6eff;
+				text-shadow: 0 0 25px #CCFF00;
+			}
+			100%{
+				box-shadow: 0 0 5px #ff6eff;
+				text-shadow: 0 0 10px #CCFF00;
+			}
+		}
+	}
+	@keyframes pulseInner {
+		0% {
+			box-shadow: inset 0 0 5px #ff6eff;
+		}
+		50% {
+			box-shadow: inset 0 0 20px #ff6eff;
+		}
+		100%{
+			box-shadow: inset 0 0 5px #ff6eff;
+		}
+	}
+	.main-header::before {
+		content: "";
+		animation: pulseInner 2s ease-out infinite both;
+	}
+	.main-header::after {
+		content: "";
+		animation: pulseInner 2s ease-out infinite both;
+	}
+}
+

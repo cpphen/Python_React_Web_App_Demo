@@ -1,0 +1,17 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+service: default
+
+handlers:
+- url: /dist
+  static_dir: dist
+
+- url: /.*
+  script: backend.pythonAttack.app
+  
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
